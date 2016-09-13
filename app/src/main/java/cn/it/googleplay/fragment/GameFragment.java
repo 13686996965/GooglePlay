@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import cn.it.googleplay.base.BaseFragment;
+import cn.it.googleplay.view.ContentPager;
 
 public class GameFragment extends BaseFragment {
     //创建成功界面
@@ -13,4 +14,10 @@ public class GameFragment extends BaseFragment {
 		tv.setText("游戏");
 		return tv;
 	}
+
+	@Override
+	public ContentPager.ResultState onLoad() {
+		return ContentPager.ResultState.LOAD_UN_LOADING;
+	}
+
 }

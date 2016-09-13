@@ -6,9 +6,11 @@ import java.util.List;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.util.Log;
 
 import cn.it.googleplay.R;
 import cn.it.googleplay.base.BaseFragment;
+import cn.it.googleplay.factory.FragmentFactory;
 import cn.it.googleplay.utils.UIUtils;
 
 // Basepager
@@ -47,7 +49,9 @@ import cn.it.googleplay.utils.UIUtils;
 		//取得当前要展示的片段
 		@Override
 		public Fragment getItem(int position) {
-			return fragments.get(position);
+			Log.d("it","****getItem*****");
+//			return fragments.get(position);
+			return FragmentFactory.getFragment(position);
 		}
         
 		//取得要装配的片段的数量

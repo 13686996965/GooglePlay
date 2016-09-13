@@ -61,7 +61,7 @@ public class MainActivity extends BaseActivity {
 		
 		
 		//2. 初始化要装配的片段
-		initPagers();
+//		initPagers();
 		//3. 准备ViewPager的适配器 
 		MainPagerAdapter adapter=new MainPagerAdapter(getSupportFragmentManager());
 		
@@ -74,20 +74,20 @@ public class MainActivity extends BaseActivity {
 		
 		
 		//6. 往适配器中添加数据
-		adapter.addDatas(datas);
+//		adapter.addDatas(datas);
 	   
 	}
 	
-	private void initPagers() {
-		datas=new ArrayList<BaseFragment>();
-		datas.add(new HomeFragment());
-		datas.add(new AppFragment());
-		datas.add(new GameFragment());
-		datas.add(new SubjectFragment());
-		datas.add(new RecommendFragment());
-		datas.add(new CategoryFragment());
-		datas.add(new HotFragment());
-	}
+//	private void initPagers() {
+//		datas=new ArrayList<BaseFragment>();
+//		datas.add(new HomeFragment());
+//		datas.add(new AppFragment());
+//		datas.add(new GameFragment());
+//		datas.add(new SubjectFragment());
+//		datas.add(new RecommendFragment());
+//		datas.add(new CategoryFragment());
+//		datas.add(new HotFragment());
+//	}
 
 	//创建操作按钮  ，创建菜单按钮
 	@Override

@@ -19,26 +19,38 @@ import cn.it.googleplay.view.ContentPager;
  */
 public abstract class BaseFragment extends Fragment {
 	public Context context;
+	private ContentPager mContentPager;
+
 	@Override
-	public void onAttach(Activity activity) {
-		super.onAttach(activity);
-		context=activity;
+	public void onAttach(Context context) {
+		super.onAttach(context);
+		this.context=context;
 	}
 	@Override
 	public View onCreateView(LayoutInflater inflater,
 			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		ContentPager contentPager=new ContentPager(context) {
+		mContentPager = new ContentPager(context) {
+			@Override
+			protected ResultState onLoad() {
+				return BaseFragment.this.onLoad();
+			}
+
 			@Override
 			public View onCreateSuccessView() {
 				return BaseFragment.this.onSubCreateView();
 			}
-	
+
 		};
-		return contentPager;
+
+		// 创建View的时候就进行加载或刷新
+		mContentPager.onLoadOrRefresh();
+		return mContentPager;
 	}
 	
 	//由于BaseFragment基类不能决定子类中的成功界面如何实现 ，所以抽象出去，由子类来实现
-	public abstract  View onSubCreateView() ;
+	public abstract View onSubCreateView() ;
+
+	public abstract ContentPager.ResultState onLoad();
 
 	
 

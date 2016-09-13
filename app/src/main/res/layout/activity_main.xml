@@ -5,7 +5,7 @@
     android:orientation="vertical"
    >
    <!-- 引用第三方 页面滑动标签控件 -->
-   <cn.itheima.gmarket.widget.PagerSlidingTabStrip 
+   <cn.it.googleplay.widget.PagerSlidingTabStrip
        android:id="@+id/tabstrip"
        android:layout_width="match_parent"
        android:layout_height="48dp"

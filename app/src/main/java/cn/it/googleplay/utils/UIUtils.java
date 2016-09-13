@@ -65,7 +65,7 @@ public class UIUtils {
 		// 比如： 当前 密度是 240 Hdpi  dpi（每英寸物理像素点的数量）  基准密度  160 MDPI 
 		//density=  1.5 
 		float density = getResources().getDisplayMetrics().density;
-		return (int) (dp*density+0.5);
+		return (int) (dp*density+0.5f);
 	}
 	//px转dp  
 	public static int px2dp(int px){
@@ -73,7 +73,7 @@ public class UIUtils {
 		// 比如： 当前 密度是 240 Hdpi  dpi（每英寸物理像素点的数量）  基准密度  160 MDPI 
 		//density=  1.5 
 		float density = getResources().getDisplayMetrics().density;
-		return (int) (px/density+0.5);
+		return (int) (px/density+0.5f);
 	}
 	
 	//判断当前线程是否为主线程
@@ -81,6 +81,13 @@ public class UIUtils {
 		return getMainThreadId()==android.os.Process.myTid();
 	}
 	
-	
+	public static void runOnMainThread(Runnable runnable){
+		if(isMainThread()) {
+		    runnable.run();
+		}else
+		{
+			getHandler().post(runnable);
+		}
+	}
 
 }
