@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+   <!-- 引用第三方 页面滑动标签控件 -->
+   <cn.itheima.gmarket.widget.PagerSlidingTabStrip 
+       android:id="@+id/tabstrip"
+       android:layout_width="match_parent"
+       android:layout_height="48dp"
+       android:background="@drawable/bg_tab"
+       />
+
+   <android.support.v4.view.ViewPager
+       android:id="@+id/vp_main"
+       android:layout_width="fill_parent"
+       android:layout_height="match_parent"
+       
+       />
+
+</LinearLayout>

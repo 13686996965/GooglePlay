@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:gm="http://schemas.android.com/apk/res-auto"
+     >
+  <!-- 
+  orderInCategory: 在菜单组中的顺序  
+   order越小越排在前面
+   
+   showAsAction： 以什么方式显示操作按钮
+   never： 不在操作栏区域显示 ，放在溢出栏隐藏
+   ifRoom：有空间则显示
+   always：一直显示
+   withText：与title一起显示
+   collapseActionView： 以Actionbar的视窗的形式展示或者折叠
+   -->
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"  
+        gm:showAsAction="ifRoom"
+        android:icon="@mipmap/ic_download"
+        android:title="设置"/>
+    <item
+        android:id="@+id/action_add"
+        android:orderInCategory="99"
+        gm:showAsAction="ifRoom"
+        android:icon="@mipmap/ic_update"
+        android:title="更新"/>
+</menu>
